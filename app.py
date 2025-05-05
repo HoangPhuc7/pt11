@@ -33,6 +33,8 @@ def load_all_exam_data(folder_path):
                     room_match = re.search(r'Phòng thi[:：]?\s*(\w+)', ' '.join(map(str, room_text)))
                     room = room_match.group(1) if room_match else "Không rõ"
                     header_index = room_line_index + 2
+                    if filename == "Tin học.xlsx":
+                        header_index = room_line_index + 1
                 else:
                     room = "Không rõ"
                     header_index = 0
